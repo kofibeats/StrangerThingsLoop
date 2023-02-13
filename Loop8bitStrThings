@@ -1,0 +1,42 @@
+use_bpm 160
+
+live_loop :strange do
+  with_fx :reverb do
+    with_synth :bass_highend do
+      with_fx :normaliser do
+        play :c4
+        sleep 0.5
+        play :e4
+        sleep 0.5
+        play :g4
+        sleep 0.5
+        play :b4
+        sleep 0.5
+        play :c5
+        sleep 0.5
+        play :b4
+        sleep 0.5
+        play :g4
+        sleep 0.5
+        play :e4
+        sleep 0.5
+      end
+    end
+  end
+end
+live_loop :treble do
+  use_synth :subpulse
+  with_fx :reverb do
+    with_fx :echo do
+      play :c3, amp: 1.4, slide: 3.333, decay_level: 1.2, decay: 1.9, release: 9.7
+      play :e2, amp: 1.4, slide: 3.333, decay_level: 1.6, decay: 1.2, release: 9.7
+      sleep 14
+      play :d3, amp: 2.6, release: 1.4
+      play :f2, amp: 2.6, release: 1.5
+      sleep 2
+      play :e3, amp: 2, slide: 3.333, decay_level: 2, decay: 0.4, release: 7.9
+      play :g2, amp: 2, slide: 3.333, decay_level: 2, decay: 0.4, release: 7.9
+      sleep 16
+    end
+  end
+end
